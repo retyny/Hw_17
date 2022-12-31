@@ -22,9 +22,9 @@ function saveTravel(){
     // Перевод строки в массив
     const raw = JSON.parse(customersLocal)
 
- if (customer.fromCity === "" || customer.toCity === ""
-   || customer.fromCity === " " || customer.toCity === " "
-   || customer.fromCity === "  " || customer.toCity === "  ") {
+ if (raw.fromCity === "" || raw.toCity === ""
+   || raw.fromCity === " " || raw.toCity === " "
+   || raw.fromCity === "  " || raw.toCity === "  ") {
    alert("Важные поля не заполнены!");
  } else {
      // Родительский элемент
@@ -35,8 +35,8 @@ function saveTravel(){
      newRightUlElement.className = 'elementHistory';
      //Вставляем элемент
      newRightUlElement.innerHTML = `
-<h3>From ${customer.fromCity} to ${customer.toCity}</h3> <h4>Expected budget:${customer.budget} ILS</h4>
-<h4>${customer.dateStart} - ${customer.dateEnd} | ${customer.persons} Persons |${customer.methodTravel} </h4>
+<h3>From ${raw.fromCity} to ${raw.toCity}</h3> <h4>Expected budget:${raw.budget} ILS</h4>
+<h4>${raw.dateStart} - ${raw.dateEnd} | ${raw.persons} Persons |${raw.methodTravel} </h4>
 `
      rightUl.insertBefore(newRightUlElement, firstLi);
  }
