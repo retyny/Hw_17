@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/css.css">
+    <title>Hw_17</title>
+</head>
+<body>
+    <div class="main">
+        <div class="left">
+                <h1> New Travel:</h1>
+                <input type="text" maxlength="16" class="place_"  id="city_1" placeholder="from City"> <br>
+                <input type="text" maxlength="16" class="place_" id="city_2" placeholder="to City"> <br>
+                <input type="text" maxlength="16" class="place_" id="budget_" placeholder="Budget">
+                <h3>Date start:</h3>
+                <input  type="date" class="place_" id="date_start">
+                <h3>Date end:</h3>
+                <input  type="date" class="place_" id="date_end">
+                <h3>Persons:</h3>
+                <input type="number" max="12" class="place_" id="persons_">
+                <h3>Maint transfer type</h3>
+                <select id="method_travel" class="place_">
+                    <option>--</option>
+                    <option>Private car</option>
+                    <option>Railway</option>
+                    <option>Fly</option>
+                    <option>Rent car</option>
+                    <option>Taxi</option>
+                    <option>Bus</option>
+                </select> <br>
+                <button id="save_travel" class="btn" onclick="saveTravel()">Save Travel</button>
+
+        </div>
+        <div class="right">
+            <div class="right_ul" id="right_ul">
+                    <h1 class="right_history">Travel History:</h1>
+            </div>
+        </div>
+    </div>
+
+
+
+<script src="script/script.js"></script>
+</body>
+</html>
