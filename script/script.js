@@ -1,6 +1,8 @@
+const database = [];
+let temp = '';
 
 function saveTravel(){
-    const database = {
+    const customer = {
         fromCity:document.getElementById("city_1").value,
         toCity:document.getElementById("city_2").value,
         budget:document.getElementById("budget_").value,
@@ -10,12 +12,20 @@ function saveTravel(){
         methodTravel:document.getElementById("method_travel").value,
     };
 
-    console.log(database.fromCity);
+    // Создание ключа из Покупателя (String)
+    temp = JSON.stringify(customer);
+    // Запушивание строки в Базу Данных
+    database.push(temp);
+    // Сохранение всех билетов в localStorage
+    localStorage.setItem('customers', JSON.stringify(database));
+  let customersLocal = localStorage.getItem('customers');
+    // Перевод строки в массив
+    const raw = JSON.parse(customersLocal)
 
- if (database.fromCity === "" || database.toCity === ""
-     || database.fromCity === " " || database.toCity === " "
-     || database.fromCity === "  " || database.toCity === "  ") {
-     alert("Важные поля не заполнены!");
+ if (customer.fromCity === "" || customer.toCity === ""
+   || customer.fromCity === " " || customer.toCity === " "
+   || customer.fromCity === "  " || customer.toCity === "  ") {
+   alert("Важные поля не заполнены!");
  } else {
      // Родительский элемент
      const rightUl = document.getElementById("right_ul");
@@ -25,10 +35,11 @@ function saveTravel(){
      newRightUlElement.className = 'elementHistory';
      //Вставляем элемент
      newRightUlElement.innerHTML = `
-<h3>From ${database.fromCity} to ${database.toCity}</h3> <h4>Expected budget:${database.budget} ILS</h4>
-<h4>${database.dateStart} - ${database.dateEnd} | ${database.persons} Persons |${database.methodTravel} </h4>
+<h3>From ${customer.fromCity} to ${customer.toCity}</h3> <h4>Expected budget:${customer.budget} ILS</h4>
+<h4>${customer.dateStart} - ${customer.dateEnd} | ${customer.persons} Persons |${customer.methodTravel} </h4>
 `
-     rightUl.insertBefore(newRightUlElement, firstLi)
+     rightUl.insertBefore(newRightUlElement, firstLi);
  }
 }
+
 
