@@ -1,11 +1,6 @@
 const database = [];
 let temp = '';
 
-// Родительский элемент
-const rightUl = document.getElementById("right_ul");
-const firstLi = rightUl.getElementsByTagName('LI')[0];
-
-
 function saveTravel(){
     const customer = {
         fromCity:document.getElementById("city_1").value,
@@ -16,21 +11,15 @@ function saveTravel(){
         persons:document.getElementById("persons_").value,
         methodTravel:document.getElementById("method_travel").value,
     };
-    // Создание ключа из Покупателя (String)
-    temp = JSON.stringify(customer);
-    // Запушивание строки в Базу Данных
-    database.push(temp);
-    // Сохранение всех билетов в localStorage
-    localStorage.setItem('customers', JSON.stringify(database));
-    let customersLocal = localStorage.getItem('customers');
-    // Перевод строки в массив
-    const raw = JSON.parse(customersLocal);
 
     if (customer.fromCity === "" || customer.toCity === ""
         || customer.fromCity === " " || customer.toCity === " "
         || customer.fromCity === "  " || customer.toCity === "  ") {
         alert("Важные поля не заполнены!");
     } else {
+        // Родительский элемент
+        const rightUl = document.getElementById("right_ul");
+        const firstLi = rightUl.getElementsByTagName('LI')[0];
         // Новый элемент
         const newRightUlElement = document.createElement('LI')
         newRightUlElement.className = 'elementHistory';
@@ -41,5 +30,24 @@ function saveTravel(){
 `
         rightUl.insertBefore(newRightUlElement, firstLi);
     }
+
+
+    function storage() {
+        // Создание ключа из Покупателя (String)
+        temp = JSON.stringify(customer);
+        // Запушивание строки в Базу Данных
+        database.push(temp);
+        // Сохранение всех билетов в localStorage
+        localStorage.setItem('customers', JSON.stringify(database));
+        console.log(database);
+        for (let i = 0; i < database.length; i++){
+            const raw = JSON.parse(database[i]);
+            console.log(raw);
+        }
+
+    }
+    storage();
 }
+
+
 
