@@ -40,6 +40,7 @@ function saveTravel(){
         // Сохранение всех билетов в localStorage
         localStorage.setItem('customers', JSON.stringify(database));
         console.log(database);
+        // Перевод Строки в обьект
         for (let i = 0; i < database.length; i++){
             const raw = JSON.parse(database[i]);
             console.log(raw);
