@@ -5,7 +5,6 @@ const database = storageVal?JSON.parse(storageVal):[];
     for (let i = 0; i < database.length; i++) {
         if(database.length >= 0) {
             console.log(database);
-            JSON.parse(database[i]);
             const rightUl = document.getElementById("right_ul");
             const firstLi = rightUl.getElementsByTagName('LI')[0];
             // Новый элемент
