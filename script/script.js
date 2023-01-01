@@ -37,28 +37,39 @@ const database = storageVal?JSON.parse(storageVal):[];
 
 
 function divCreate() {
-    customer = customerCreate();
-    // Родительский элемент
-    const rightUl = document.getElementById("right_ul");
-    const firstLi = rightUl.getElementsByTagName('LI')[0];
-    // Новый элемент
-    const newRightUlElement = document.createElement('LI')
-    newRightUlElement.className = 'elementHistory';
-    //Вставляем элемент
-    newRightUlElement.innerHTML = `
+        customer = customerCreate();
+        if (customer.fromCity === "" || customer.toCity === ""
+            || customer.fromCity === " " || customer.toCity === " "
+            || customer.fromCity === "  " || customer.toCity === "  "
+            || customer.fromCity === "   " || customer.toCity === "   ") {
+            alert('Заполните важные поля!');
+            return 0;
+        } else {
+            // Родительский элемент
+            const rightUl = document.getElementById("right_ul");
+            const firstLi = rightUl.getElementsByTagName('LI')[0];
+            // Новый элемент
+            const newRightUlElement = document.createElement('LI')
+            newRightUlElement.className = 'elementHistory';
+            //Вставляем элемент
+            newRightUlElement.innerHTML = `
 <h3>From ${customer.fromCity} to ${customer.toCity}</h3> <h4>Expected budget:${customer.budget} ILS</h4>
 <h4>${customer.dateStart} - ${customer.dateEnd} | ${customer.persons} Persons |${customer.methodTravel} </h4>
 `
-    rightUl.insertBefore(newRightUlElement, firstLi);
+            rightUl.insertBefore(newRightUlElement, firstLi);
+        }
+
 }
 
 function saveTravel() {
-    divCreate();
-    // Перевод customer в стринг и пуш в базу данных
-    database.push(JSON.stringify(customer = customerCreate()));
-    // Сохранение всех билетов в localStorage
-    localStorage.setItem('customers', JSON.stringify(database));
-
+    if (divCreate() === 0){
+        return 0;
+        } else {
+        // Перевод customer в стринг и пуш в базу данных
+        database.push(JSON.stringify(customer = customerCreate()));
+        // Сохранение всех билетов в localStorage
+        localStorage.setItem('customers', JSON.stringify(database));
+        }
     }
 
 
