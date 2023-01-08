@@ -35,7 +35,18 @@ body {
     padding-right: 128px;
 }
 
+.item1 {
+    margin-top: 10px;
+    flex: 1;
+}
+
+
+.item2 {
+    flex: 3;
+}
+
 .elementHistory{
+    display: flex;
     font-size: 15px;
     background: forestgreen;
     width: 30em;
@@ -44,6 +55,7 @@ body {
     list-style-type: none;
     padding-left: 30px;
     padding-bottom: 1px;
+    margin-bottom: 20px;
 }
 
 .place_ {
