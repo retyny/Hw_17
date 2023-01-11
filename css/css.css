@@ -86,3 +86,52 @@ body {
     transform: translate(0em, 0em);
 }
 
+.wrapper_modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgb(0,0,0, .5);
+}
+
+.modal {
+    width: 300px;
+    padding-bottom: 10px;
+    margin: auto;
+    margin-top: 50px;
+    background: lightgray;
+    border-radius: 10px;
+
+}
+
+.place_modal{
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    margin-left: 10px;
+}
+
+.btn_modal{
+    color: white;
+    margin-top: 10px;
+    width: 90%;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    background-color: forestgreen;
+    cursor: pointer;
+    margin-left: 13px;
+}
+
+.modal_close {
+    width: 200%;
+}
+
+.modal_close {
+    margin-left: 285px;
+}
