@@ -129,9 +129,10 @@ body {
 }
 
 .modal_close {
-    width: 200%;
+    margin-left: 285px;
+    cursor: pointer;
 }
 
-.modal_close {
-    margin-left: 285px;
+.hide {
+    display: none;
 }

@@ -46,6 +46,32 @@
     </div>
 
     <!-- Modal window -->
+    <div class="wrapper_modal hide" id="wrapper_modal">
+        <div class="modal">
+            <span class="modal_close" id="modal_close">&times;</span>
+            <h1> Edit:</h1>
+            <input type="text" maxlength="16" class="place_modal"  id="city_1_modal" placeholder="from City"> <br>
+            <input type="text" maxlength="16" class="place_modal" id="city_2_modal" placeholder="to City"> <br>
+            <input type="text" maxlength="16" class="place_modal" id="budget_modal" placeholder="Budget">
+            <h3>Date start:</h3>
+            <input  type="date" class="place_modal" id="date_start_modal">
+            <h3>Date end:</h3>
+            <input  type="date" class="place_modal" id="date_end_modal">
+            <h3>Persons:</h3>
+            <input type="number" max="12" class="place_modal" id="persons_modal">
+            <h3>Maint transfer type</h3>
+            <select id="method_travel_modal" class="place_modal">
+                <option>--</option>
+                <option>Private car</option>
+                <option>Railway</option>
+                <option>Fly</option>
+                <option>Rent car</option>
+                <option>Taxi</option>
+                <option>Bus</option>
+            </select> <br>
+            <button id="save_travel_modal" class="btn_modal">Save Travel</button>
+        </div>
+    </div>
 
 
     <script src="script/script.js"></script>
